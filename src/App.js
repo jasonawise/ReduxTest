@@ -26,9 +26,21 @@ function App() {
 
 export default App;
 
-const hello = () => ({
-  welcome: "hello"
-});
-const store = createStore(hello);
+const defaultState = { welcome: "Hi", otherState: "Some stuff" };
+
+const greeting = (state = defaultState, action) => {
+  switch (action.type) {
+    case "GREET_ME":
+      return { ...state, welcome: "Hello Jason" };
+    case "GREET_WORLD":
+      return { ...state, welcome: "Hello World" };
+    default:
+      return state;
+  }
+};
+const store = createStore(greeting);
+
+store.dispatch({ type: "GREET_ME" });
+
 console.log(store);
 console.log(store.getState());
