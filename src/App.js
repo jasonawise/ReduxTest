@@ -4,8 +4,9 @@ import { Provider } from "react-redux";
 import logo from "./logo.svg";
 import "./App.css";
 import rootReducer from "./rootReducer";
+import { composeWithDevTools } from "redux-devtools-extension";
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, {}, composeWithDevTools());
 
 function App() {
   return (
