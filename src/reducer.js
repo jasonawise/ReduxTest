@@ -7,7 +7,10 @@ export default function(state = initailState, action) {
 
   switch (type) {
     case "TOOGLE_MESSAGE":
-      return state;
+      return {
+        ...state,
+        messageVisibility: !state.messageVisibility
+      };
     default:
       return state;
   }
