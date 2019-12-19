@@ -3,10 +3,9 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import logo from "./logo.svg";
 import "./App.css";
+import rootReducer from "./rootReducer";
 
-const hello = () => "hello";
-
-const store = createStore(hello);
+const store = createStore(rootReducer);
 
 function App() {
   return (
