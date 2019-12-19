@@ -1,13 +1,20 @@
 import React from "react";
-import { createStore } from "redux";
+import { applyMiddleware, createStore } from "redux";
 import { Provider } from "react-redux";
 import logo from "./logo.svg";
 import "./App.css";
 import rootReducer from "./rootReducer";
 import { composeWithDevTools } from "redux-devtools-extension";
+import logger from "redux-logger";
 import Toogle from "./Toogle";
 
-const store = createStore(rootReducer, {}, composeWithDevTools());
+const middleWare = [logger];
+
+const store = createStore(
+  rootReducer,
+  {},
+  composeWithDevTools(applyMiddleware(...middleWare))
+);
 
 function App() {
   return (
