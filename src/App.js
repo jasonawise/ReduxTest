@@ -5,6 +5,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import rootReducer from "./rootReducer";
 import { composeWithDevTools } from "redux-devtools-extension";
+import Toogle from "./Toogle";
 
 const store = createStore(rootReducer, {}, composeWithDevTools());
 
@@ -25,6 +26,7 @@ function App() {
           >
             Learn React
           </a>
+          <Toogle />
         </header>
       </div>
     </Provider>
