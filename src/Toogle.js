@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import toogleMessage from "./actions";
+import { toogleMessage } from "./actions";
 import { bindActionCreators } from "redux";
 
 const Toogle = ({ messageVisibility, toogleMessage }) => (
