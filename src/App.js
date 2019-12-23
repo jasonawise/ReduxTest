@@ -8,6 +8,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import logger from "redux-logger";
 import thunk from "redux-thunk";
 import Toogle from "./toogle/Toogle";
+import MoviesList from "./movies/MoviesList";
 
 const middleWare = [logger, thunk];
 
@@ -33,6 +34,7 @@ function App() {
             rel="noopener noreferrer"
           ></a>
           <Toogle />
+          <MoviesList></MoviesList>
         </header>
       </div>
     </Provider>
