@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { toogleMessage, getMovies } from "./actions";
+import { toogleMessage } from "../toogle/actions";
+import { getMovies } from "../movies/actions";
 import { bindActionCreators } from "redux";
 
 const Toogle = ({ messageVisibility, toogleMessage, getMovies }) => (
@@ -12,7 +13,7 @@ const Toogle = ({ messageVisibility, toogleMessage, getMovies }) => (
 );
 
 const mapStateToProps = state => ({
-  messageVisibility: state.message.messageVisibility
+  messageVisibility: state.toogle.messageVisibility
 });
 
 const mapDispatchToProps = dispatch =>
