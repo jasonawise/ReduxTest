@@ -1,12 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import { toogleMessage } from "./actions";
+import { toogleMessage, getMovies } from "./actions";
 import { bindActionCreators } from "redux";
 
-const Toogle = ({ messageVisibility, toogleMessage }) => (
+const Toogle = ({ messageVisibility, toogleMessage, getMovies }) => (
   <div>
     {messageVisibility && <p>You will see this if toggled</p>}
     <button onClick={() => toogleMessage()}>Toogle Me</button>
+    <button onClick={() => getMovies()}>Load Movies</button>
   </div>
 );
 
@@ -15,6 +16,6 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ toogleMessage }, dispatch);
+  bindActionCreators({ toogleMessage, getMovies }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Toogle);

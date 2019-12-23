@@ -1,17 +1,23 @@
-import { TOOGLE_MESSAGE } from "./actions";
+import { TOOGLE_MESSAGE, GET_MOVIES } from "./actions";
 
 const initailState = {
-  messageVisibility: false
+  messageVisibility: false,
+  movies: []
 };
 
 export default function(state = initailState, action) {
-  const { type } = action;
+  const { type, data } = action;
 
   switch (type) {
     case TOOGLE_MESSAGE:
       return {
         ...state,
         messageVisibility: !state.messageVisibility
+      };
+    case GET_MOVIES:
+      return {
+        ...state,
+        movies: data
       };
     default:
       return state;

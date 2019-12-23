@@ -6,9 +6,10 @@ import "./App.css";
 import rootReducer from "./rootReducer";
 import { composeWithDevTools } from "redux-devtools-extension";
 import logger from "redux-logger";
+import thunk from "redux-thunk";
 import Toogle from "./Toogle";
 
-const middleWare = [logger];
+const middleWare = [logger, thunk];
 
 const store = createStore(
   rootReducer,
